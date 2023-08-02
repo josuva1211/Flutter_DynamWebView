@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "566274959979",
+    "project_id": "ng-fitness-tracker-d21bb",
+    "storage_bucket": "ng-fitness-tracker-d21bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566274959979:android:a15effd410288047f19f2e",
+        "android_client_info": {
+          "package_name": "com.example.dynamic_load_web"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566274959979-luain5og78s693dbhv3esfhfhl78gpm0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwae1n-8l1pZKE9x4QaBHqjZZNijJ8pP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566274959979-luain5og78s693dbhv3esfhfhl78gpm0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
