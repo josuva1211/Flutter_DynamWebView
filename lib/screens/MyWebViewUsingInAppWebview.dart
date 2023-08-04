@@ -25,7 +25,7 @@ class MyWebViewUsingInAppWebview extends StatelessWidget {
   Future<void> downloadAndUnzipFile(
       InAppWebViewController webViewController) async {
     String zipFilePath =
-        'files/forms-td-practice.zip'; // Replace with your zip file path
+        'files/course-project-1.zip'; // Replace with your zip file path
 
     try {
       firebase_storage.Reference ref =
@@ -55,7 +55,7 @@ class MyWebViewUsingInAppWebview extends StatelessWidget {
           outFile.writeAsBytesSync(file.content);
 
           // If the current file is "index.html", load it into the WebView
-          if (file.name == 'forms-td-practice/index.html') {
+          if (file.name == 'course-project-1/index.html') {
             webViewController.loadFile(assetFilePath: '${outFile.path}');
           }
         }
