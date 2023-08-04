@@ -33,7 +33,7 @@ class _MyWebViewState extends State<MyWebView> {
 
   Future<void> downloadAndUnzipFile() async {
     String zipFilePath =
-        'files/forms-td-practice.zip'; // Replace with your zip file path
+        'files/course-project-1.zip'; // Replace with your zip file path
 
     try {
       firebase_storage.Reference ref =
@@ -65,7 +65,7 @@ class _MyWebViewState extends State<MyWebView> {
           outFile.writeAsBytesSync(file.content);
 
           // If the current file is "index.html", load it into the WebView
-          if (file.name == 'forms-td-practice/forms-td-practice/index.html') {
+          if (file.name == 'course-project-1/index.html') {
             // url = Uri.file(fileName).toString();
 
             // final uri = Uri.directory(Uri.file(fileName).toString());

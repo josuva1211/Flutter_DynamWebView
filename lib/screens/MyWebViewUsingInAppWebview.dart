@@ -55,7 +55,7 @@ class MyWebViewUsingInAppWebview extends StatelessWidget {
           outFile.writeAsBytesSync(file.content);
 
           // If the current file is "index.html", load it into the WebView
-          if (file.name == 'forms-td-practice/forms-td-practice/index.html') {
+          if (file.name == 'forms-td-practice/index.html') {
             webViewController.loadFile(assetFilePath: '${outFile.path}');
           }
         }
