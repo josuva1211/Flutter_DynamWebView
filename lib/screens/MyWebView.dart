@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -73,6 +74,7 @@ class _MyWebViewState extends State<MyWebView> {
             //     uri.toString().substring(0, uri.toString().length - 1);
 
             /// Remove final slash symbol
+
             _webViewController.loadFile('${outFile.path}');
           }
         }

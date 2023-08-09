@@ -48,13 +48,15 @@ class _MyWebViewUsingStringState extends State<MyWebViewUsingString> {
       // String indexHtmlContents = await getFileContents(
       //     '${appDocDir.path}/Webview/fitness-tracker/index.html');
       String cssContents = await getFileContents(
-          '${appDocDir.path}/forms-td-practice/styles.897077e29848b68c.css');
+          '${appDocDir.path}/course-project-1/styles.897077e29848b68c.css');
       String mainjsContents = await getFileContents(
-          '${appDocDir.path}/forms-td-practice/main.1b8b9af40a2b844d.js');
+          '${appDocDir.path}/course-project-1/main.d479e2f4025eb7f3.js');
       String polyfillsjsContents = await getFileContents(
-          '${appDocDir.path}/forms-td-practice/polyfills.86504faaa884e352.js');
+          '${appDocDir.path}/course-project-1/polyfills.0a7f8f7d60da847c.js');
       String runtimejsContents = await getFileContents(
-          '${appDocDir.path}/forms-td-practice/runtime.cfe305ccd58dd19e.js');
+          '${appDocDir.path}/course-project-1/runtime.27853c431c54d3dc.js');
+      // String scriptjsContents = await getFileContents(
+      //     '${appDocDir.path}/ang-proj-for-flutter/scripts.2f66b6135d2ecb21.js');
 
       // Combine the contents into a single HTML string
       String combinedHtml = '''
@@ -67,9 +69,9 @@ class _MyWebViewUsingStringState extends State<MyWebViewUsingString> {
         </head>
         <body class="mat-typography">
           <app-root></app-root>
-        <script type="module">$runtimejsContents</script>
-        <script type="module">$polyfillsjsContents</script>
-        <script type="module">$mainjsContents</script>
+        <script>$runtimejsContents</script>
+        <script>$polyfillsjsContents</script>
+        <script>$mainjsContents</script>
 
         </body></html>
       ''';
@@ -87,7 +89,7 @@ class _MyWebViewUsingStringState extends State<MyWebViewUsingString> {
 
   Future<void> downloadFile(File localFile) async {
     // Replace 'your_zip_file_path' with the actual path of the zip file in Firebase Storage
-    String zipFilePath = 'files/forms-td-practice.zip';
+    String zipFilePath = 'files/course-project-1.zip';
     firebase_storage.Reference ref =
         firebase_storage.FirebaseStorage.instance.ref(zipFilePath);
     await ref.writeToFile(localFile);

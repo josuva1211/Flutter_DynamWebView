@@ -5,7 +5,34 @@ import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:archive/archive.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-class MyWebViewUsingInAppWebview extends StatelessWidget {
+final InAppLocalhostServer localhostServer = InAppLocalhostServer();
+
+class MyWebViewUsingInAppWebview extends StatefulWidget {
+  @override
+  State<MyWebViewUsingInAppWebview> createState() =>
+      _MyWebViewUsingInAppWebviewState();
+}
+
+class _MyWebViewUsingInAppWebviewState
+    extends State<MyWebViewUsingInAppWebview> {
+  final InAppLocalhostServer localhostServer = InAppLocalhostServer();
+
+  @override
+  void initState() {
+    super.initState();
+    _startServerAndLoadHtml();
+  }
+
+  Future<void> _startServerAndLoadHtml() async {
+    await localhostServer.start();
+  }
+
+  @override
+  void dispose() {
+    localhostServer.close();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +83,9 @@ class MyWebViewUsingInAppWebview extends StatelessWidget {
 
           // If the current file is "index.html", load it into the WebView
           if (file.name == 'course-project-1/index.html') {
-            webViewController.loadFile(assetFilePath: '${outFile.path}');
+            webViewController.loadUrl(
+                urlRequest: URLRequest(
+                    url: Uri.parse("http://localhost:8080${outFile.path}")));
           }
         }
       }
